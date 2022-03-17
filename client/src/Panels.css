@@ -1,0 +1,88 @@
+.panel_section{
+    position: relative;
+    width:100vw;
+    min-width:300px;
+    height:100vh;
+    background-color: rgb(27, 25, 25);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel_wrapper{
+    position: relative;
+    width:100%;
+    max-width:600px;
+    height:auto;
+    margin:0 15px;
+
+}
+.panel_title{
+    color:rgb(80, 135, 255);
+    font-size:1.5rem;
+    margin-bottom:20px;
+}
+
+
+.panel_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.labels{
+    font-size: 0.85rem;
+    align-self: flex-start;
+    color:white;
+
+    margin-bottom:3px;
+}
+
+.input{
+    width:100%;
+    height:25px;
+    
+    margin-bottom:5px;
+    padding-left:10px;
+
+    border:none;
+    outline:none;
+    border-radius: 5px;
+
+    background-color: rgb(255, 255, 255);
+}
+
+
+.btn-wrapper{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top:10px;
+}
+
+.btn-wrapper button{
+    font-size:0.9rem;
+    color:white;
+    padding:5px 15px;
+
+    border:none;
+    border-radius:5px;
+
+    background-color: rgb(74, 64, 214);
+}
+
+.btn-wrapper span{
+    color:white;
+    font-size: 0.65rem;
+    text-align: right;
+}
+
+.btn-wrapper span a{
+    color:white;
+    margin-left:3px;
+}
