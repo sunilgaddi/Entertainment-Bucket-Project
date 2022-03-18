@@ -43,7 +43,7 @@
 
 .input{
     width:100%;
-    height:25px;
+    height:22px;
     
     margin-bottom:5px;
     padding-left:10px;
@@ -85,4 +85,15 @@
 .btn-wrapper span a{
     color:white;
     margin-left:3px;
+}
+
+.err{
+    color:rgb(161, 40, 40);
+    width:100%;
+    font-size: 0.9rem;
+    margin-bottom:8px;
+}
+
+.success{
+    color:rgb(146, 253, 146);
 }
