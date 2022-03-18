@@ -29,7 +29,7 @@ const userCtrls = {
 
             if(!cf_password) return res.status(400).json({cf_password:"Please enter Confirm Password ."})
 
-            if(password !== cf_password) return res.status(400).json({cf_password:"Passwords dont not match."}) 
+            if(password !== cf_password) return res.status(400).json({cf_password:"Passwords do not match."}) 
 
             const passwordHash = await bcrypt.hash(password, 12)
 
