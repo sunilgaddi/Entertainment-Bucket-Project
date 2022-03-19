@@ -2,7 +2,7 @@ const Users = require('../model/userModel')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const sendMail = require('./sendMail')
-const { getAccessToken } = require('../../reefit/controllers/userCtrls')
+
 
 const {CLIENT_URL} = process.env
 
