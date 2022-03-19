@@ -2,7 +2,7 @@ const Users = require('../model/userModel')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const sendMail = require('./sendMail')
-const { getAccessToken } = require('../../reefit/controllers/userCtrls')
+
 
 const {CLIENT_URL} = process.env
 
@@ -29,7 +29,7 @@ const userCtrls = {
 
             if(!cf_password) return res.status(400).json({cf_password:"Please enter Confirm Password ."})
 
-            if(password !== cf_password) return res.status(400).json({cf_password:"Passwords dont not match."}) 
+            if(password !== cf_password) return res.status(400).json({cf_password:"Passwords do not match."}) 
 
             const passwordHash = await bcrypt.hash(password, 12)
 
