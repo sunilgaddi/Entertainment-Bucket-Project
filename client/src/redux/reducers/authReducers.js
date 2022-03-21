@@ -10,6 +10,8 @@ const initialState = {
 const authReducers = (state = initialState, action) => {
     switch(action.type){
         case ACTIONS.LOGIN : return {...state, isLoggedIn:true }
+        case ACTIONS.GET_INFO :return {...state, user:action.payload.user,
+        isAdmin:action.payload.isAdmin}
         default: return state
     }
 }
