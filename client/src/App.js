@@ -5,10 +5,12 @@ import axios from 'axios'
 import './App.css';
 import Registration from './components/create/Registration';
 import ActivateEmail from './components/activateEmail/ActivateEmail';
+
 import Login from './components/login/Login'
 import ForgotPassword from "./components/forgotPassword/ForgotPassword";
 import ResetPassword from "./components/resetPassword/ResetPassword";
 import {dispactchLogin ,dispatchUserInfo} from './redux/actions/authActions'
+
 
 function App() {
   const token = useSelector(state => state.tokenReducer)
@@ -62,6 +64,7 @@ function App() {
       <Routes>
         <Route path='/user/login' element={<Login/>}/>
       </Routes>
+
       <Routes>
         <Route path='/user/forgot' element={<ForgotPassword/>}/>
       </Routes>
