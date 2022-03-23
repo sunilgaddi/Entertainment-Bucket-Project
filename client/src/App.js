@@ -5,7 +5,7 @@ import axios from 'axios'
 import './App.css';
 import Registration from './components/create/Registration';
 import ActivateEmail from './components/activateEmail/ActivateEmail';
-
+import Profile from './components/profile/Profile'
 import Login from './components/login/Login'
 import ForgotPassword from "./components/forgotPassword/ForgotPassword";
 import ResetPassword from "./components/resetPassword/ResetPassword";
@@ -70,6 +70,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path='/user/reset/:reset_token' element={<ResetPassword/>}/>
+      </Routes>
+      <Routes>
+        <Route path='/user/profile' element={<Profile/>}/>
       </Routes>
       
     </Router>
