@@ -25,6 +25,11 @@ const UserSchema = new mongoose.Schema({
     role:{
         type:Number,
         default:0,  //0 - users, 1 - admins
+    },
+    phoneNumber:{
+        type:Number,
+        require:[true,"Please enter your Password"],
+        trim:true,
     }
 },{
     timestamps:true
