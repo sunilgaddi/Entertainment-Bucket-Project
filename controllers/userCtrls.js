@@ -12,7 +12,7 @@ const userCtrls = {
 
             const {firstName, lastName, email, password,  cf_password, phoneNumber} = req.body
 
-            if(!firstName) return res.status(400).json({firstName:"Please enter your First Name."})
+            if(!firstName) return res.status(400).json({firstName:"Plase enter your First Name."})
             if(!lastName) return res.status(400).json({lastName:"Please enter your Last Name."})
 
             if(!email) return res.status(400).json({email:"Please enter your Email."})
