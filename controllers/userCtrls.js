@@ -2,7 +2,7 @@ const Users = require('../model/userModel')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const sendMail = require('./sendMail')
-const { getAccessToken } = require('../../reefit/controllers/userCtrls')
+
 
 const {CLIENT_URL} = process.env
 
@@ -211,12 +211,12 @@ const userCtrls = {
     },
     userUpdate: async (req, res) => {
         try {
-            const {firstName, lastName, avatar } = req.body
+            const {firstName, lastName, phoneNumber } = req.body
 
             await Users.findByIdAndUpdate(req.user.id, {
                 firstName,
                 lastName,
-                avatar
+                phoneNumber
             })
 
             res.status(200).json({ msg: "Updated Successfully." })
