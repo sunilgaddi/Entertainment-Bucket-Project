@@ -3,17 +3,24 @@ const userCtrl = require('../controllers/userCtrls')
 const auth = require('../middleware/auth')
 const authAdmin = require('../middleware/authAdmin')
  
-router.post('/register', userCtrl.register)
-router.post('/activation',userCtrl.emailActivation)
-router.post('/login', userCtrl.login)
-router.get('/refresh_token',userCtrl.getAccessToken)
-router.post('/forgotpassword', userCtrl.forgotPassword)
-router.post('/reset', auth, userCtrl.resetPassword )
-router.get('/logout' ,userCtrl.logout)
-router.get('/info', auth, userCtrl.getUserInfo)
-router.get('/all_info',auth, authAdmin, userCtrl.getAllUserInfo)
-router.patch('/update', auth, userCtrl.userUpdate)
-router.patch('/update_role/:id', auth, authAdmin, userCtrl.updateUsersRole)
-router.delete('/delete/:id', auth, authAdmin, userCtrl.deleteUser)
+router.post('/user/register', userCtrl.register)
+router.post('/user/activation',userCtrl.emailActivation)
+router.post('/user/login', userCtrl.login)
+router.get('/user/refresh_token',userCtrl.getAccessToken)
+router.post('/user/forgotpassword', userCtrl.forgotPassword)
+router.post('/user/reset', auth, userCtrl.resetPassword )
+router.get('/user/logout' ,userCtrl.logout)
+router.get('/user/info', auth, userCtrl.getUserInfo)
+router.get('/user/all_info',auth, authAdmin, userCtrl.getAllUserInfo)
+router.patch('/user/update', auth, userCtrl.userUpdate)
+router.patch('/user/update_role/:id', auth, authAdmin, userCtrl.updateUsersRole)
+router.delete('/user/delete/:id', auth, authAdmin, userCtrl.deleteUser)
+
+//google
+
+router.post('/user/google_login', userCtrl.googleLogin)
+
+//movies routes
+
 
 module.exports = router

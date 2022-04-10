@@ -10,8 +10,9 @@ const app = express()
 app.use(express.json())
 app.use(cookieparser())
 
-const routes = require("./routes/userRoutes")
-app.use('/user', routes )
+const userRoutes = require("./routes/userRoutes")
+const moviesRoutes = require('./routes/movieRoutes')
+app.use('/eb', moviesRoutes,userRoutes)
 
 const url = process.env.MONGODB_URL
 
