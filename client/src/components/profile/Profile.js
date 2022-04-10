@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import {useSelector} from 'react-redux'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 import avatar from '../../avatar.jpg'
+import forwardarrow from '../../forwardarrow.png'
 import "./Profile.css"
 
 const initialState = {
@@ -18,7 +20,7 @@ function Profile() {
     const auth = useSelector(state => state.authReducers)
     const token = useSelector(state => state.tokenReducer)
 
-    const {user} = auth 
+    const {user, isAdmin} = auth 
      
     const update = (e) => {
         e.preventDefault()
@@ -59,7 +61,7 @@ function Profile() {
             <div id='profile_wrapper'>
             {serverMsg.success && <span id = "profile_updated">{serverMsg.success}</span>}
             <h1 className='profile'>Profile</h1>
-                <div id='image_wrapper'><img id='image' src={avatar}></img></div>
+                <div id='image_wrapper'><img id='image' src={avatar} alt='avatar'></img></div>
                 <div id='details_wrapper' className='borders'>
                 
                     <form >
@@ -81,6 +83,7 @@ function Profile() {
                         </div>
                     </form>
                 </div>
+               {isAdmin &&  <div id='fwdarw'><Link to='/user/all_info'>ALL USERS<img src={forwardarrow} alt='forward arrow'/></Link></div>}
             </div>
         </div>
     )

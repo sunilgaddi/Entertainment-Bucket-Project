@@ -1,0 +1,68 @@
+#admin_section{
+    position: relative;
+    width:100vw;
+    height:auto;
+    min-height:100vh;
+    min-width:300px;
+
+    padding:100px 10px 0 10px;
+
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: flex-start;
+    align-content:flex-start;
+
+    background-color: #141414;
+}
+
+#admin_section h1{
+    width:100%;
+    color:white;
+    margin:0 0 20px 20px;
+}
+
+#user_card{
+    position: relative;
+    width:250px;
+    height:auto;
+
+    padding:13px;
+    margin:10px;
+
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 3px 10px black;
+    border:1px solid rgb(44, 43, 43);
+    border-radius: 5px;
+}
+
+.user_details{
+    font-size: 0.8rem;
+    display:block;
+    color:rgb(255, 255, 255);
+    margin-bottom: 5px;
+}
+
+
+#admin_btns{
+    margin-top:10px;
+}
+
+#admin_btns a{
+    padding:3px 8px;  
+    color:rgb(255, 255, 255);
+    border-radius:3px;
+
+    background-color: #535ef1;
+}
+
+#admin_btns a:last-child{
+    margin-left:8px;
+}
+
+@media only screen and (max-width:570px){
+    #admin_section{
+        justify-content: space-evenly;
+        align-content:flex-start;
+    }
+}
+

@@ -24,7 +24,7 @@ function ResetPassword () {
         const resetPassword = async () => {
             
             try {
-                const res = await axios.post('/user/reset', {password, cf_password},{headers:{Authorization:reset_token}} )
+                const res = await axios.post('/eb/user/reset', {password, cf_password},{headers:{Authorization:reset_token}} )
                 console.log("hello",res)
                 setServerMsg({[Object.keys(res.data)]:Object.values(res.data)})
                

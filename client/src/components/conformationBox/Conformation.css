@@ -1,0 +1,53 @@
+
+/* alert box*/
+
+#alertbox{
+    position:relative;
+    width:100vw;
+    height:100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(19, 19, 19);
+}
+
+#box{
+    position: relative;
+    width:350px;
+    height:150px;
+    background-color: rgb(70, 70, 70);
+
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#box p{
+    text-align: center;
+    color:white;
+}
+
+.altbtn{
+
+    border-radius: 5px;
+    outline: none;
+    border:none;
+
+    margin-top:15px;
+    padding:5px 20px;
+    color:white;
+}
+
+#del{
+    background-color:rgb(98, 233, 98);
+}
+
+#cnl{
+    background-color: rgb(224, 64, 64);
+    margin-left:10px;
+}

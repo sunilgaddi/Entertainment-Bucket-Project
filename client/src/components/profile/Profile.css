@@ -3,6 +3,7 @@
     width:100vw;
     height: 100vh;
     min-width:300px;
+    min-height:600px;
 
     /*background-color: #0E0E10;*/
     background-color: #121212;
@@ -12,7 +13,7 @@
 #profile_wrapper{
     position:absolute;
     width:100%;
-    max-width:600px;
+    max-width:450px;
     height:auto;
 
     top:50%;
@@ -22,17 +23,21 @@
     padding:10px;
     border:1px solid rgb(32, 32, 32);
     border-radius:5px;
+
 }
 
 #profile_updated{
     font-size: 1.2rem;
     color:rgb(105, 238, 105);
+
 }
 
 .profile{
     color:rgb(148, 79, 238);
     text-align: center;
-    margin-bottom: 25px;
+    margin:0 0 25px 0;
+    font-size:clamp(1.6rem,4.5vw,2.3rem);
+    
 }
 
 #image_wrapper{
@@ -58,13 +63,13 @@
 }
 
 .profile_labels{
-    font-size: .85rem;
+    font-size: clamp(0.85rem,2vw,1rem);
     color: aliceblue;
     margin-bottom: 5px;
 }
 
 .profile_inputs{
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     color:white;
     text-transform: capitalize;
 
@@ -111,4 +116,21 @@
     background-color: rgb(253, 63, 63);
     box-shadow: 0px 0px 5px rgb(253, 63, 63);  
     margin-left: 10px;
+}
+
+#fwdarw{
+    margin-top: 10px;
+}
+
+#fwdarw a{
+    color:white;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+
+#fwdarw img{
+    width:20px;
 }
