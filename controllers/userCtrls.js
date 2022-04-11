@@ -1,5 +1,5 @@
 const Users = require('../model/userModel')
-const bcrypt = require('bcrypt')
+const bcryptjs = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const sendMail = require('./sendMail')
 const { google } = require('googleapis')
@@ -35,7 +35,10 @@ const userCtrls = {
 
             if (password !== cf_password) return res.status(400).json({ cf_password: "Passwords do not match." })
 
-            const passwordHash = await bcrypt.hash(password, 12)
+            
+            const passwordHash = await bcryptjs.hash(password,12)
+
+            console.log(passwordHash)
 
             if (!phoneNumber) return res.status(400).json({ phoneNumber: "Please enter your PhoneNumber." })
 
@@ -97,7 +100,7 @@ const userCtrls = {
 
             if (!password) return res.status(400).json({ password: "Please enter your Password." })
 
-            const isMatch = await bcrypt.compare(password, user.password)
+            const isMatch = await bcryptjs.compare(password, user.password)
 
             if (!isMatch) return res.status(400).json({ password: "Incorrect Password." })
 
@@ -174,7 +177,7 @@ const userCtrls = {
 
         if (password !== cf_password) return res.status(400).json({ cf_password: "Passwords do not match." })
 
-        const passwordHash = await bcrypt.hash(password, 12)
+        const passwordHash = await bcryptjs.hash(password, 12)
 
         await Users.findByIdAndUpdate(req.user.id, { password: passwordHash })
 
@@ -265,14 +268,14 @@ const userCtrls = {
 
             const password = email + process.env.GOOGLE_SECRET
 
-            const passwordHash = await bcrypt.hash(password, 12)
+            const passwordHash = await bcryptjs.hash(password, 12)
 
             if (!email_verified) return res.status(400).json({msg:"Email Verification failed."})
                 
             const user = await Users.findOne({ email })
 
                 if (user) {
-                    const isMatch = await bcrypt.compare(password, user.password)
+                    const isMatch = await bcryptjs.compare(password, user.password)
 
                     if (!isMatch) return res.status(400).json({ email: "Password incorrect." })
 
