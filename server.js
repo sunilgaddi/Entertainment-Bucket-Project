@@ -1,5 +1,5 @@
 require("dotenv").config()
-
+const path = require('path');
 const express = require("express")
 const mongoose = require("mongoose")
 const cookieparser = require("cookie-parser")
@@ -10,8 +10,10 @@ const app = express()
 app.use(express.json())
 app.use(cookieparser())
 
+
 const userRoutes = require("./routes/userRoutes")
 const moviesRoutes = require('./routes/movieRoutes')
+app.use(express.static(path.join(__dirname ,'client/build')))
 app.use('/eb', moviesRoutes,userRoutes)
 
 const url = process.env.MONGODB_URL
