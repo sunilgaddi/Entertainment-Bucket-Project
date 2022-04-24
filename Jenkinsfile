@@ -12,8 +12,8 @@ pipeline {
                     bat "dir"
                     bat 'npm install'
                     bat 'npm run build'
+                    bat 'serve -s build'
                 }
-                bat "npm run dev"
             }
         }
     }
