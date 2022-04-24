@@ -8,10 +8,10 @@ pipeline {
             steps {
                 bat "npm version"
                 bat "npm install"
-                bat 'cd client/'
+                'cd client'
                 bat 'npm install'
                 bat 'npm run build'
-                bat 'cd ./'
+                'cd ./'
                 bat "npm run dev"
             }
         }
