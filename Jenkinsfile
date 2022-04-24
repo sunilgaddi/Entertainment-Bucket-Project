@@ -13,6 +13,7 @@ pipeline {
                     bat 'npm install'
                     bat 'npm run build'
                 }
+                bat "npm run dev"
             }
         }
     }
