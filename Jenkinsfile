@@ -12,7 +12,7 @@ pipeline {
                     bat "dir"
                     bat 'npm install'
                     bat 'npm run build'
-                    bat 'npm i serve'
+                    bat 'npm i -g serve'
                     bat 'serve -s build'
                 }
             }
