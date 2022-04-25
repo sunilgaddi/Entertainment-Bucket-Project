@@ -60,7 +60,7 @@ function Login() {
         <div className='panel_section'>
             <div className='panel_wrapper'>
                 {serverMsg.success && <span className="success">{serverMsg.success}</span>}
-                <h1 className='panel_title' id='login_title'>Sunil</h1>
+                <h1 className='panel_title' id='login_title'>Login</h1>
                 <form className='panel_form' id='login_form' onSubmit={handleSubmit}>
 
 
