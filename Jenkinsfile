@@ -17,7 +17,9 @@ pipeline {
             }
         }
         stage('Copying Build') {
-            sh "sudo cp -v -r jenkins/workspace/Mern-Pipeline/client/build/* /var/www/mern.local/"
+            steps {
+                sh "sudo cp -v -r jenkins/workspace/Mern-Pipeline/client/build/* /var/www/mern.local/"
+            }
         }
     }
 }
