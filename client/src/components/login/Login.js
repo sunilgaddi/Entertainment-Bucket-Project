@@ -64,7 +64,7 @@ function Login() {
                 <form className='panel_form' id='login_form' onSubmit={handleSubmit}>
 
 
-                    <label htmlFor='email' className='labels'>Email</label>
+                    <label htmlFor='email' className='labels'>Email Address</label>
                     <input type='email' id='email' className='input' name='email' value={user.email} onChange={handleChange} ></input>
                     {serverMsg.email ? <span className='err'>{serverMsg.email}</span> : <span className='err'>{errors.email}</span>}
 
