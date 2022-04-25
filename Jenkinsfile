@@ -18,7 +18,8 @@ pipeline {
         }
         stage('Copying Build') {
             steps {
-                sh "sudo cp -v -r jenkins/workspace/Mern-Pipeline/client/build/*:/var/www/mern.local/"
+                sh "sudo service nginx restart"
+                sh "sudo pm2 restart server.js"
             }
         }
     }
