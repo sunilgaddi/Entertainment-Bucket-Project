@@ -12,8 +12,6 @@ pipeline {
                     sh "dir"
                     sh 'npm install'
                     sh 'npm run build'
-                    sh 'npm i -g serve'
-                    sh 'serve -s build'
                 }
             }
         }
