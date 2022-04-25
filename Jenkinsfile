@@ -9,11 +9,11 @@ pipeline {
                 bat "npm version"
                 bat "npm install"
                 dir('client') {
-                    bat "dir"
-                    bat 'npm install'
-                    bat 'npm run build'
-                    bat 'npm i -g serve'
-                    bat 'serve -s build'
+                    sh "dir"
+                    sh 'npm install'
+                    sh 'npm run build'
+                    sh 'npm i -g serve'
+                    sh 'serve -s build'
                 }
             }
         }
