@@ -16,10 +16,9 @@ pipeline {
                 echo "========== INSTALLING DEPENDENCIES FINISHED =========="
             }
         }
-        stage('Copying Build') {
+        stage('Restarting Service') {
             steps {
-                sh "sudo service nginx restart"
-                sh "sudo pm2 restart server.js"
+                sh "sudo service nginx restart""
             }
         }
     }
