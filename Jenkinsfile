@@ -16,10 +16,5 @@ pipeline {
                 echo "========== INSTALLING DEPENDENCIES FINISHED =========="
             }
         }
-        stage('Restarting Service') {
-            steps {
-                sh "sudo service nginx restart"
-            }
-        }
     }
 }
