@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Restarting Service') {
             steps {
-                sh "sudo service nginx restart""
+                sh "sudo service nginx restart"
             }
         }
     }
