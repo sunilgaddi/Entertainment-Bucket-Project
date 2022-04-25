@@ -14,6 +14,9 @@ app.use(cookieparser())
 const userRoutes = require("./routes/userRoutes")
 const moviesRoutes = require('./routes/movieRoutes')
 app.use(express.static(path.join(__dirname ,'client/build')))
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
 app.use('/eb', moviesRoutes,userRoutes)
 
 const url = process.env.MONGODB_URL
