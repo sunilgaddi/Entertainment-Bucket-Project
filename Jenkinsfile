@@ -1,7 +1,7 @@
 pipeline {
-    agent any
+    agent Linux
     
-    tools {nodejs '17.0.0'}
+    tools {nodejs '16.14.2'}
     
     stages {
         stage('Checking Version') {
