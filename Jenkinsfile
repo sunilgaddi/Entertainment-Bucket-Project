@@ -6,8 +6,8 @@ pipeline {
     stages {
         stage('Checking Version') {
             steps {
-                bat "npm version"
-                bat "npm install"
+                sh "npm version"
+                sh "npm install"
                 dir('client') {
                     sh "dir"
                     sh 'npm install'
