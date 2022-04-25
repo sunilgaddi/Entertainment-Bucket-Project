@@ -74,8 +74,8 @@ function Login() {
 
 
                     <div className='btn-wrapper'>
-                        <button>Register</button>
-                        <span>Dont have a account?<a href="#">Login</a></span>
+                        <button>Login</button>
+                        <span>Dont have a account?<a href="#">Register</a></span>
                     </div>
 
                     <div><span></span>OR<span></span></div>
