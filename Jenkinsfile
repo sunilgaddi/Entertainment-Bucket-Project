@@ -4,16 +4,20 @@ pipeline {
     tools {nodejs 'node'}
     
     stages {
-        stage('Checking Version') {
+        stage('Installing Dependencies') {
             steps {
-                sh "npm version"
+                echo "========== INSTALLING DEPENDENCIES STARTED =========="
                 sh "npm install"
                 dir('client') {
                     sh "dir"
                     sh 'npm install'
                     sh 'npm run build'
                 }
+                echo "========== INSTALLING DEPENDENCIES FINISHED =========="
             }
+        }
+        stage('Copying Build') {
+            sh "sudo cp -v -r jenkins/workspace/Mern-Pipeline/client/build/* /var/www/mern.local/"
         }
     }
 }
