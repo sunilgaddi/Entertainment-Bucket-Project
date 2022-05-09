@@ -10,15 +10,22 @@ const app = express()
 app.use(express.json())
 app.use(cookieparser())
 
-
+//Routes
 const userRoutes = require("./routes/userRoutes")
-const moviesRoutes = require('./routes/movieRoutes')
+const iplRoutes = require('./routes/iplRoutes')
+
+//Serving static content
 app.use(express.static(path.join(__dirname ,'client/build')))
+
 app.use('/*',(req, res) => {
   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
-app.use('/eb', moviesRoutes,userRoutes)
 
+
+//Entry point
+app.use('/eb',iplRoutes,userRoutes)
+
+//mongdb connection
 const url = process.env.MONGODB_URL
 
 mongoose.connect(url, (err)=>{
@@ -28,7 +35,8 @@ mongoose.connect(url, (err)=>{
     console.log("Connected to the MongoDB!")
 })
 
-app.listen( 8000 , () => {
+//Running server
+app.listen( PORT , () => {
     console.log("Server is running on port", PORT)
 })
 

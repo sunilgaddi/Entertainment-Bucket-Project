@@ -1,0 +1,39 @@
+.seasons__container {
+    position: relative;
+    width: 100%;
+    height:auto;
+    border:1px solid red;
+    padding:20px 50px;
+}
+
+.seasons__upper__container{
+    display: flex;
+    justify-content: flex-start;
+    gap:20px;
+}
+
+.seasons__poster{
+    min-width:200px;
+    min-height: 250px;
+    background-color: white;
+}
+
+.seasons__details li{
+    list-style: none;
+    color:white;
+}
+
+.seasons__details li{
+    list-style: none;
+    color:white;
+}
+
+.list{
+    font-size:clamp(.65rem,2.2vw,.9rem);
+}
+
+.series__name{
+    
+}
+
+

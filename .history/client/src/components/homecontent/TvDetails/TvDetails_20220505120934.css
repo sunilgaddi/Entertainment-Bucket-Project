@@ -1,0 +1,338 @@
+.moviedetails__container {
+    position: relative;
+    width: 100%;
+    height:auto;
+}
+
+.moviedetails__container__uppersection{
+    display: grid;
+    grid-template-columns:100px 1fr 100px;
+    grid-template-rows:repeat(2,auto) 1fr;
+}
+
+.moviedetails__banner{
+    width:100%;
+    height:350px;
+    grid-column: 1/-1;
+    grid-row:1/3
+}
+.moviedetails__banner::before{
+    content: "";
+    position: absolute;
+    width:100%;
+    height:350px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.movie__poster-details__wrapper{
+    display: flex;
+    gap:15px;
+    grid-column: 2/3;
+    grid-row:2/-1;
+    z-index:1;
+}
+.moviedetails__poster{
+    min-width:200px;
+    min-height:250px;
+    box-shadow:5px 5px 10px 5px rgba(0, 0, 0, 0.4);
+}
+
+.moviedetails__list{
+    display:block;
+    color:rgb(225, 222, 222);
+    font-size:clamp(.65rem,2.2vw,.9rem);
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.movie__name{
+    font-size:clamp(.8rem,3.3vw,1.8rem);
+    font-weight: 900;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.movie__duration{
+    display:flex;
+    gap:5px;
+}
+
+.movie__rating__votes__wrapper{
+    display: flex;
+    align-items: center;
+}
+
+.movie__rating{
+    display: inline-block;
+    padding:2px 5px;
+    border-radius:8px;
+    background-color: rgb(231, 192, 36);
+    margin-right:5px;
+}
+
+.timer{
+    width:20px;
+    height:20px;
+    filter: invert();
+}
+
+.moviedetails__container__middlesection{
+    width: 100%;
+    height: auto;
+    margin-top:20px;
+    padding:0 80px;
+}
+
+.moviedetails__desc__wrapper{
+    max-width:700px;
+}
+
+.moviedetails__desc__heading, .moviedetails__desc{
+    color:white;
+}
+
+.moviedetails__desc__heading{
+    font-family: 'Prompt', sans-serif;
+    font-size:clamp(1rem,3.4vw,1.8rem);
+}
+.moviedetails__desc{
+    font-size:clamp(.7rem,2.4vw,1.1rem);
+    font-weight:100;
+    margin-top: 10px;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+
+.moviedetails__moredetails__wrapper{
+    display: flex;
+    gap:30px;
+    margin:30px 0;
+}
+
+
+
+.movie__moredetails{
+    display: block;
+    color:white;
+    font-size:clamp(.75rem,2.3vw,1rem);
+    font-weight:300;
+    margin:8px 0;
+    font-family: 'Jost', sans-serif;
+}
+
+.moredetails__heading{
+    color:rgb(96, 93, 93);
+    font-weight: 600;
+}
+
+.movie__genre, .movie__production{
+    display:inline;
+    margin-right:10px;
+}
+
+/* bottom section */
+
+.moviedetails__container__bottomsection{
+    padding:0 30px;
+}
+
+.movie__cc__heading{
+    font-size:clamp(1rem,3.4vw,1.8rem);
+    color:rgb(120, 120, 120);
+    font-family: 'Prompt', sans-serif;
+}
+
+.movie__cast__profiles__wrapper, .movie__crew__profiles__wrapper{
+    display: flex;
+    gap:20px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+
+}
+
+.movie__cast__profile__list{
+    display: flex;
+    align-items: center;
+    gap:20px;
+    font-size:clamp(.55rem,1.9vw,.8rem);
+    font-family: 'Red Hat Display', sans-serif;
+    color:white;
+    padding:5px 5px;
+    padding-right:20px;
+    border-radius:50px;
+    border:1px solid rgb(57, 57, 57);
+    box-shadow:0 0 20px rgb(28, 27, 27);
+    
+}
+
+.movie__cast__profile{
+    display: block;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+}
+
+@media only screen and (max-width:970px){
+    
+    .moviedetails__banner{
+        height:290px;
+
+    }
+    .moviedetails__banner::before{
+        height:290px;
+    }
+    .moviedetails__poster{
+        min-width:172px;
+        min-height:220px;
+        box-shadow:2px 2px 10px 5px rgba(0, 0, 0, 0.4);
+    }
+
+    .movie__cast__profile__list{
+        gap:20px;   
+    }
+    
+    .movie__cast__profile{
+        width:35px;
+        height:35px;
+    }
+
+    .timer{
+        width:18px;
+        height:18px;
+    }
+
+    
+
+}
+
+@media only screen and (max-width:750px){
+    
+    .moviedetails__banner{
+        height:230px;
+    }
+    .moviedetails__banner::before{
+        height:230px;
+    }
+    .moviedetails__poster{
+        min-width:146px;
+        min-height:190px;
+        box-shadow:2px 2px 10px 5px rgba(0, 0, 0, 0.4);
+    }
+
+    .timer{
+        width:15px;
+        height:15px;
+    }
+
+
+    .movie__cast__profile__list{
+        gap:15px;   
+    }
+    
+    .movie__cast__profile{
+        width:30px;
+        height:30px;
+    }
+    
+
+}
+
+@media only screen and (max-width:500px){
+    .moviedetails__container__uppersection{
+        grid-template-columns: 1fr;
+        grid-template-rows:repeat(2,auto) 1fr
+    }
+
+    .movie__poster-details__wrapper{
+        gap:8px;
+        justify-content: center;
+        grid-column: 1/-1;
+        padding:0 10px;
+    }
+
+    .moviedetails__banner{
+        height:180px;
+        grid-column:1/-1;
+    }
+    .moviedetails__banner::before{
+        height:180px;
+    }
+
+    .moviedetails__poster{
+        min-width:120px;
+        min-height:160px;
+        box-shadow:2px 2px 10px 5px rgba(0, 0, 0, 0.4);
+    }
+    
+
+    .moviedetails__list{
+        margin-bottom: 3px;
+    }
+    
+    
+    .movie__duration{
+        gap:5px;
+        align-items: center;
+    }
+    
+    .movie__rating{
+        padding:1px 5px;
+        margin-right:5px;
+    }
+    
+    .timer{
+        width:10px;
+        height:10px;
+    }
+
+
+
+    .moviedetails__container__middlesection{
+        padding:0 15px;
+    }
+    
+    .moviedetails__desc{
+        letter-spacing: .8px;
+        margin-top: 5px;
+    }
+    
+    
+    .moviedetails__moredetails__wrapper{
+        display: flex;
+        gap:13px;
+        margin:15px 0;
+    }
+      
+    .movie__moredetails{
+        letter-spacing: .8px;
+        margin:8px 0;
+    }
+
+
+    .moviedetails__container__bottomsection{
+        padding:0 15px;
+    }
+    
+    .movie__cast__profiles__wrapper, .movie__crew__profiles__wrapper{
+        gap:10px;
+        padding: 10px 0;
+    }
+    
+    .movie__cast__profile__list{
+        gap:13px;
+        letter-spacing: .8px;
+        padding:3px;
+        padding-right:10px;
+    }
+    
+    .movie__cast__profile{
+        width:25px;
+        height:25px;
+    }
+
+}
+
+.tv__episodes{
+    width:100%
+    border:1px solid red;
+}

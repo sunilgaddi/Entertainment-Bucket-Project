@@ -1,0 +1,75 @@
+.movies__row__wrapper{
+    position: relative;
+    width:100%;
+    height:auto;
+    margin:20px 0;
+    padding: 10px 20px;
+}
+
+.movie__row__title{
+    color:white;
+    line-height: 1.1rem;
+    font-family: 'Prompt', sans-serif;
+    font-size: clamp(1rem,3.5vw,1.5rem);
+}
+
+.movie__row__posters{
+    display: flex;
+    margin-top: 20px;
+    overflow-x: hidden;
+    cursor: pointer;
+}
+.movie__row__posters.active{
+    cursor: grab;
+}
+.movie__row__poster{
+    min-width:120px;
+    min-height:180px;
+    background-color: aliceblue;
+    margin:0 20px;
+    border-radius: 10px;
+}
+.sports__posters{
+    flex-wrap: wrap;
+}
+
+.sports__poster{
+    min-width:200px;
+    min-height:150px;
+}
+
+@media only screen and (max-width:970px){
+    .movie__row__poster{
+        min-width:110px;
+        min-height:170px;
+        margin:0 15px;
+    }
+    
+}
+
+@media only screen and (max-width:750px){
+    .movies__row__wrapper{
+        margin-bottom: 13px;
+        padding: 5px 20px; 
+    }
+    .movie__row__poster{
+        min-width:100px;
+        min-height:160px;
+    }
+    
+}
+
+@media only screen and (max-width:500px){
+    .movies__row__wrapper{
+        margin-bottom: 10px; 
+        padding: 0 20px;
+    }
+    .movie__row__posters{
+        margin-top: 15px; 
+    }
+    .movie__row__poster{
+        min-width:85px;
+        min-height:145px;
+        margin:0 8px;
+    } 
+}

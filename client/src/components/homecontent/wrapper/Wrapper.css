@@ -1,0 +1,20 @@
+.wrapper__section{
+    position: relative;
+    width: 100%;
+    height:auto;
+    padding-left: 230px;
+}
+
+@media only screen and (max-width:970px){
+    .wrapper__section{
+        padding-left: 150px;
+    }
+    
+}
+
+@media only screen and (max-width:750px){
+    .wrapper__section{
+        padding-left: 0px;
+    }
+    
+}
