@@ -1,0 +1,73 @@
+[
+    {
+        "team_id":"1",
+        "team_name":"CSK",
+        "team_full_name":"Chennai Super Kings",
+        "team_poster":"https://i0.wp.com/gauravtiwari.org/wp-content/uploads/2022/03/image-6.png?w=143&quality=100&ssl=1",
+        "team_desc":"MS Dhoni will lead the Super kings in the IPL 2022, that is for sure. They added some top-drawer players to their squads like Dwayne Bravo, Devon Conway, Deepak Chahar, Mitchell Santner and Ambati Rayudu. Certainly, CSK will be among the betting favorites and one of the teams to beat."
+    },
+    {
+        "team_id":"2",
+        "team_name":"MI",
+        "team_full_name":"Mumbai Indians",
+        "team_poster":"https://i0.wp.com/gauravtiwari.org/wp-content/uploads/2022/03/image-13.png?w=145&quality=100&ssl=1",
+        "team_desc":"MI appeared to only have one intention for this auction, and that was to secure the services of the exciting youngster Ishan Kishan. After achieving that, the rest of the auction was slightly underwhelming, which was capped off with the signing of Jofra Archer, who has confirmed he won’t be playing in the 2022 tournament."
+    },
+    {
+        "team_id":"3",
+        "team_name":"RCB",
+        "team_full_name":"Bangalore Royal Challengers",
+        "team_poster":"https://i0.wp.com/gauravtiwari.org/wp-content/uploads/2022/03/image-12.png?w=145&quality=100&ssl=1",
+        "team_desc":"Unsurprisingly, Bangalore Royal Challengers retained Indian superstar Virat Kohli, along with Glenn Maxwell and Siraj. In the Mega Auction, 19 new players came in. These included Wanindu Hasaranga, Josh Hazelwood, Harshal Patel, and Faf du Plessis. With a good mix of experience and youth, Bangalore are in a strong position this season."
+    },
+    {
+        "team_id":"4",
+        "team_name":"SRH",
+        "team_full_name":"Sunrisers Hyderabad",
+        "team_poster":"https://i0.wp.com/gauravtiwari.org/wp-content/uploads/2022/03/image-15.png?w=145&quality=100&ssl=1",
+        "team_desc":"Although the Sunrisers retained Kane Williamson, they let go of three experienced players in David Warner, Jonny Bairstow, and Rashid Khan. SRH’s most expensive purchase in the Mega Auction was Nicholas Pooran, who cost INR 10.75 crores. "
+    },
+    {
+        "team_id":"5",
+        "team_name":"KKR",
+        "team_full_name":"Kolkata Knight Riders",
+        "team_poster":"https://i0.wp.com/gauravtiwari.org/wp-content/uploads/2022/03/image-9.png?w=145&quality=100&ssl=1",
+        "team_desc":"KKR retained four players and bought in another 21, including Sam Billings, Alex Hales, Pat Cummins, and Shreyas Iyer, who will captain the side. There seems to be a good balance throughout for KKR, so one to keep an eye on in the betting."
+    },
+    {
+        "team_id":"6",
+        "team_name":"DC",
+        "team_full_name":"Delhi Capitals",
+        "team_poster":"https://i0.wp.com/gauravtiwari.org/wp-content/uploads/2022/03/image-7.png?w=143&quality=100&ssl=1",
+        "team_desc":"It’s widely agreed that DC had neither a good nor bad IPL Auction. They retained Rishabh Pant, who will captain the side. They purchased 20 new players, including David Warner and Mitchell Stark. While there’s no doubting the quality of this pairing, neither set the 2021 IPL on fire, so they could be potentially risky signings."
+    },
+    {
+        "team_id":"7",
+        "team_name":"LSG",
+        "team_full_name":"Lucknow Super Giants",
+        "team_poster":"https://i0.wp.com/gauravtiwari.org/wp-content/uploads/2022/03/image-11.png?resize=200%2C200&quality=100&ssl=1",
+        "team_desc":"As another new team, LSG were able to draft KL Rahul, Ravi Bishnoi, and Marcus Stoinis before the Auction. They proceeded with adding more key players, including Deepak Honda, Quinton de Kock, Jason Holder, Avesh Khan, and Krunal Pandya, to name a few. From top to bottom, they look relatively strong."
+    },
+    {
+        "team_id":"8",
+        "team_name":"PBKS",
+        "team_full_name":"Punjab Kings",
+        "team_poster":"https://i0.wp.com/gauravtiwari.org/wp-content/uploads/2022/03/image-10.png?w=145&quality=100&ssl=1",
+        "team_desc":"PBKS only kept two players from their 2021 squad while snapping up 23 new faces in the Auction. Liam Livingstone, Jonny Bairstow, Kagiso Rabada, and Shikhar Dhawan are all quality signings that could make the Punjab Kings real contenders in 2022."
+    },
+    {
+        "team_id":"9",
+        "team_name":"GT",
+        "team_full_name":"Gujarat Titans",
+        "team_poster":"https://i0.wp.com/gauravtiwari.org/wp-content/uploads/2022/03/image-8.png?resize=200%2C200&quality=100&ssl=1",
+        "team_desc":"As one of the new teams, we’re dealing with an unknown quantity in GT. Overall, they had a respectable auction, bringing in Jason Roy, Lockie Ferguson, Dominic Drakes, Mohammed Shami, and David Miller, among others. A question mark is over the top order, as other IPL sides look stronger."
+    },
+    {
+        "team_id":"10",
+        "team_name":"RR",
+        "team_full_name":"Rajasthan Royals",
+        "team_poster":"https://i0.wp.com/gauravtiwari.org/wp-content/uploads/2022/03/image-14.png?resize=200%2C200&quality=100&ssl=1",
+        "team_desc":"There’s a lot of debate over RR’s performance in the auction. Having already retained Jos Buttler, Yashasvi Jaiswal, and Sanju Samson, there was a good opportunity to strengthen. Among the 21 players they bought are Trent Boult, R Ashwin, and Prasidh Krishna. It remains to be seen if RR’s middle order is strong enough to go all the way."
+    }
+
+]

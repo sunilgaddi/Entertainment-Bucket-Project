@@ -1,0 +1,26 @@
+.sportsdetail__container{
+    position: relative;
+    width:100%;
+    height:auto;
+}
+
+
+table{
+    width:700px;
+    border-top: 4px solid;
+    border-left:4px solid;
+    border-color: rgb(255, 160, 17);
+    border-radius:10px;
+    background-color: white;
+    margin:auto;
+}
+
+.team__logo{
+    width:50px;
+    height:50px;
+}
+
+.team_name_log{
+    display: flex;
+    align-items: ;
+}

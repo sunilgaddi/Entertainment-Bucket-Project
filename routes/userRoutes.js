@@ -20,7 +20,4 @@ router.delete('/user/delete/:id', auth, authAdmin, userCtrl.deleteUser)
 
 router.post('/user/google_login', userCtrl.googleLogin)
 
-//movies routes
-
-
 module.exports = router
