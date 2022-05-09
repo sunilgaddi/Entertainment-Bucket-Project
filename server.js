@@ -17,6 +17,11 @@ const iplRoutes = require('./routes/iplRoutes')
 //Serving static content
 app.use(express.static(path.join(__dirname ,'client/build')))
 
+app.use('/*',(req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
+
 //Entry point
 app.use('/eb',iplRoutes,userRoutes)
 
