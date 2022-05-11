@@ -2,17 +2,19 @@
     position: relative;
     width:100%;
     height:auto;
+    padding:0 30px;
 }
 
 
-table{
+.short__score__board{
     width:100%;
-   max-width:700px;
+    height:auto;
+    max-width:700px;
     border-top: 4px solid;
     border-left:4px solid;
     border-color: rgb(255, 160, 17);
     border-radius:10px;
-    background-color: white;
+    background-color: #D2D4D6;
     margin:auto;
 }
 
@@ -34,7 +36,36 @@ table{
 }
 
 .team__name__score{
-    font-weight:800;
-    font-size: 1.3rem;
+    font-weight:900;
+    font-size: 1.2rem;
+    font-family: 'Lato', sans-serif;
     color:rgb(47, 46, 46);
+}
+
+.fs__wrapper{
+    position: relative;
+    width:100%;
+    height:auto;
+    padding:15px 0;
+}
+
+@media only screen and (max-width:500px) {
+    .sportsdetail__container{
+        padding:0 20px;
+    }
+    .team__logo{
+        width:35px;
+        height:35px;
+    }
+    .match__number__date{
+        font-size: .85rem;
+
+    }
+    .team__name__score{
+        font-size: 1rem;
+    }
+
+    .srv__info{
+        font-size: .9rem;
+    }
 }
