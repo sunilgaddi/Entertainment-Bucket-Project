@@ -29,7 +29,7 @@ function Wrapper() {
                 <Route path='/sports' element={<SportsPanel/>} />
             </Routes>
             <Routes>
-                <Route path='/sports/:match_number/:versus' element={<SportsDetails/>} />
+                <Route path='/sports/:id/:match_number/:versus' element={<SportsDetails/>} />
             </Routes>
         </section>
     )

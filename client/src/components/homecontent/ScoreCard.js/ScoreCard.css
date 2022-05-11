@@ -1,0 +1,125 @@
+.fs__board__container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    padding: 10px 20px;
+    background-color: #19483F;
+    margin: 30px auto;
+}
+
+ul,
+li {
+    list-style: none;
+    color: aliceblue;
+}
+
+.fs__flex {
+    display: flex;
+}
+
+.player__stats__list__heading,
+.bowler__stats__list__heading,
+.player__stats__list,
+.bowler__stats__list,
+.fs__short__score__card,
+.extras__stats,
+.total__runs__stats__lst {
+    width: 10%;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fs__short__score__card {
+    width: 100%;
+    justify-content: flex-start;
+    border-top: 2px solid rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.player__stats__list__heading,
+.bowler__stats__list__heading {
+    border-bottom: 2px solid rgb(0, 0, 0);
+    font-weight: 600;
+}
+
+.player__stats__list,
+.bowler__stats__list,
+.extras__stats,
+.total__runs__stats,
+.dnb__lst,
+.fow__lst {
+    border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+.player__name,
+.bowler__name {
+    flex: 1;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.player__stats__list span {
+    font-weight: 100;
+    font-size: .8rem;
+}
+
+.extras__stats {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.extras__stats span,
+.dnb__lst span,
+.fow__lst span {
+    font-weight: 300;
+}
+
+.dnb__lst,
+.fow__lst {
+    padding: 5px 0;
+}
+
+.total__runs__stats {
+    justify-content: space-between;
+}
+
+.total__runs__stats__lst {
+    width: auto;
+}
+
+
+
+@media only screen and (max-width:500px) {
+    .fs__board__container {
+        padding: 10px 10px;
+        margin: 20px auto;
+    }
+
+    .fs__short__score__card {
+        font-size: .85rem;
+    }
+
+    .player__stats__list__heading,
+    .bowler__stats__list__heading{
+        font-size: .85rem;
+    }
+
+    .player__stats__list,
+    .bowler__stats__list,
+    .extras__stats,
+    .total__runs__stats,
+    .dnb__lst,
+    .fow__lst {
+        font-size: .8rem;
+    }
+
+    .extras__stats span,
+    .dnb__lst span,
+    .fow__lst span,
+    .player__stats__list span {
+        font-size: .7rem;
+    }
+}

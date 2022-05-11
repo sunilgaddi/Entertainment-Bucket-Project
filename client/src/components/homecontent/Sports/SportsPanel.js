@@ -11,6 +11,7 @@ function SportsPanel() {
         const fetchPosters = async () => {
             try{
                 const response = await axios.get('/eb/ipl-api/matchwise-posters')
+                console.log(response.data)
                 setMatchWisePoster(response.data)
             }
             catch(err){
@@ -19,6 +20,8 @@ function SportsPanel() {
         }
         fetchPosters()
     },[])
+
+    console.log(matchWisePoster)
     return(
         <div className='sports__container'>
             <SnGbanner url={url}/>
