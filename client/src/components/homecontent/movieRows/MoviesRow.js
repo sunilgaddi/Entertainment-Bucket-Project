@@ -44,10 +44,10 @@ function MoviesRow({ data, title ,mainPanel,subPanel,tvSeries}) {
     return (
         <div className='movies__row__wrapper '>
             <h1 className='movie__row__title'>{title}</h1>
-            <div className={`movie__row__posters ${mainPanel === 'sports' && 'sports__posters'}`}>
+            <div className={`movie__row__posters ${mainPanel === 'sports' && 'sports__posters'}  `}>
                 {
                     data ? data.map((item, id) => {
-                        return <Link key={id} to={mainPanel === 'sports' ? `/eb/home/${mainPanel}/${item.id}/${item.match_number}/${item.versus}`: `/eb/home/${mainPanel}/${item.original_title || item.original_name}/${item.id}`}><div className={`movie__row__poster ${mainPanel === 'sports' && 'sports__poster'}`} style={{ backgroundImage: mainPanel === 'sports' ? `url(${item.banner})` : `url("https://image.tmdb.org/t/p/original/${item?.poster_path}")`, backgroundPosition: 'center', backgroundSize: "cover" }} >{item.poster_path === null && 'N/A'}</div>{subPanel === 'season' && <span>Season {item?.season_number}</span>}</Link>
+                        return <Link key={id} to={mainPanel === 'sports' ? `/eb/home/${mainPanel}/${item.id}/${item.match_number}/${item.versus}`: mainPanel === 'gaming' ?  `/eb/home/${mainPanel}/${subPanel}/${item.contentDetails.videoId}` : `/eb/home/${mainPanel}/${item.original_title || item.original_name}/${item.id}`}><div className={`movie__row__poster ${mainPanel === 'sports' && 'sports__poster'} ${mainPanel === 'gaming' && 'gaming__poster'}`} style={{ backgroundImage: mainPanel === 'sports' ? `url(${item?.banner})` : mainPanel === "gaming" ?  `url(${item?.snippet.thumbnails.high.url})`  :  `url("https://image.tmdb.org/t/p/original/${item?.poster_path}")`, backgroundPosition: 'center', backgroundSize: "cover" }} >{item.poster_path === null && 'N/A'}</div>{subPanel === 'season' && <span>Season {item?.season_number}</span>}</Link>
                     })
                         :
                         ""

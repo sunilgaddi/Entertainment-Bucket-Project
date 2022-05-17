@@ -13,12 +13,13 @@ app.use(cookieparser())
 //Routes
 const userRoutes = require("./routes/userRoutes")
 const iplRoutes = require('./routes/iplRoutes')
+const gamingRoutes = require("./routes/gamingRoutes")
 
 //Serving static content
 app.use(express.static(path.join(__dirname ,'client/build')))
 
 //Entry point
-app.use('/eb',iplRoutes,userRoutes)
+app.use('/eb',iplRoutes,userRoutes,gamingRoutes)
 
 //mongdb connection
 const url = process.env.MONGODB_URL

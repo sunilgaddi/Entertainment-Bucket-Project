@@ -9,6 +9,7 @@ function Navigation2() {
                     <li className='nav__section2__list'><NavLink to='/eb/home/movies' style={ ({isActive}) => ( { color : isActive ? 'white' : 'rgb(102, 99, 99)'})} className='nav__section2__list__link'>Movies</NavLink></li>
                     <li className='nav__section2__list'><NavLink to='/eb/home/tvseries' style={ ({isActive}) => ( { color : isActive ? 'white' : 'rgb(102, 99, 99)'})} className='nav__section2__list__link'>Tv Series</NavLink></li>
                     <li className='nav__section2__list'><NavLink to='/eb/home/sports' style={ ({isActive}) => ( { color : isActive ? 'white' : 'rgb(102, 99, 99)'})} className='nav__section2__list__link'>Sports</NavLink></li>
+                    <li className='nav__section2__list'><NavLink to='/eb/home/gaming' style={ ({isActive}) => ( { color : isActive ? 'white' : 'rgb(102, 99, 99)'})} className='nav__section2__list__link'>Gaming</NavLink></li>
                 </ul>
 
                 <ul className='nav__section2__lists__two nav__section2__lists'>
