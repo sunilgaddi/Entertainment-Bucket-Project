@@ -5,6 +5,8 @@ import TvSeriesPanel from '../TvSeries/TvSeriesPanel'
 import TvDetails from '../TvDetails/TvDetails'
 import SportsPanel from '../Sports/SportsPanel'
 import SportsDetails from '../SportsDetails/SportsDetail'
+import GamingPanel from '../gaming/GamingPanel'
+import GameDetails from '../gameDetails/GameDetails'
 import "./Wrapper.css"
 
 
@@ -30,6 +32,12 @@ function Wrapper() {
             </Routes>
             <Routes>
                 <Route path='/sports/:id/:match_number/:versus' element={<SportsDetails/>} />
+            </Routes>
+            <Routes>
+                <Route path='/gaming' element={<GamingPanel/>} />
+            </Routes>
+            <Routes>
+                <Route path='/gaming/:game_name/:video_id' element={<GameDetails/>} />
             </Routes>
         </section>
     )

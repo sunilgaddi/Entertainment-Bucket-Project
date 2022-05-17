@@ -61,7 +61,7 @@ function SportsDetails() {
 
 
     useEffect(() => {
-        if (matchDetails.full_results) {
+        if (matchDetails?.full_results) {
             const { full_results } = matchDetails
             const fetchMatchScores = async () => {
                 try {

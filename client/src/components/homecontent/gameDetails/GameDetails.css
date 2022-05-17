@@ -1,0 +1,56 @@
+.gamedetails___container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding:20px 50px;
+}
+
+.gamedetails__upper__wrapper {
+    display: flex;
+
+    gap: 20px;
+    color: white;
+    justify-content: center;
+}
+
+.gamedetails__des__wrapper,
+.gamedetails__upper__wrapper
+{
+    margin:20px 0;
+}
+
+.gamedetails__poster {
+    width: 300px;
+    height: 250px;
+}
+
+.gamedetails {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.game__name {
+
+    font-size: clamp(.8rem, 3.3vw, 1.8rem);
+    font-weight: 900;
+    font-family: 'Red Hat Display', sans-serif;
+
+}
+
+.game__list {
+    font-size: clamp(.65rem, 2.2vw, .9rem);
+    font-family: 'Jost', sans-serif;
+}
+
+.game__des__heading{
+    color:white;
+    margin: 10px 0;
+}
+
+.game__des {
+    color: white;
+    font-family: 'Prompt', sans-serif;
+    font-size: clamp(1rem, 3.4vw, 1rem);
+
+}

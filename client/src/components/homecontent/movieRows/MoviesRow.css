@@ -37,7 +37,8 @@
     justify-content: space-evenly;
 }
 
-.sports__poster {
+.sports__poster,
+.gaming__poster {
     min-width: 200px;
     min-height: 150px;
     margin: 10px 20px;
@@ -50,9 +51,15 @@
         margin: 0 15px;
     }
 
-    .sports__poster {
+    .sports__poster{
         min-width: 190px;
         min-height: 140px;
+    }
+
+    .gaming__poster{
+        min-width: 175px;
+        min-height: 130px;
+        margin: 5px 10px;
     }
 }
 
@@ -67,9 +74,15 @@
         min-height: 160px;
     }
 
-    .sports__poster {
+    .sports__poster{
         min-width: 170px;
         min-height: 130px;
+    }
+
+    .gaming__poster{
+        min-width: 160px;
+        min-height: 120px;
+        margin: 5px 13px;
     }
 
 }
@@ -90,9 +103,14 @@
         margin: 0 8px;
     }
 
-    .sports__poster {
+    .sports__poster{
         min-width: 150px;
         min-height: 100px;
-        margin: 10px 20px;
+        
+    }
+    .gaming__poster{
+        min-width: 120px;
+        min-height: 90px;
+        margin: 5px 8px;
     }
 }
