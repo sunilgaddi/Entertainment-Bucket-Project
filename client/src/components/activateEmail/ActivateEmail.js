@@ -12,7 +12,7 @@ function ActivateEmail() {
         if(activation_token){
             const activateEmail = async () => {
                 try{
-                    const res = await axios.post('/user/activation', {activation_token})
+                    const res = await axios.post('/eb/user/activation', {activation_token})
                     setServerMsg({[Object.keys(res.data)]:Object.values(res.data)})
                 }
                 catch(err){

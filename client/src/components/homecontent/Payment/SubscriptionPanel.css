@@ -1,0 +1,135 @@
+.subscription__panel__container{
+    position: relative;
+    width:auto;
+    height:auto;
+    margin:10px 30px;
+    background-color:aliceblue;
+}
+
+.subscription__panel__intro__wrapper{
+    text-align: center;
+    padding:20px;
+}
+
+.subscription__panel__plans__wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.plans{
+    width:230px;
+    height:300px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin:40px 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.plans__desc{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    text-align: center;
+}
+
+         
+.subscription__btn {
+    background-image: linear-gradient(to right, #4776E6 0%, #8E54E9  51%, #4776E6  100%);
+    padding: 12px 45px;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    border:none;
+    outline: none;
+    font-size:clamp(.65rem,1.7vw,.9rem);
+  }
+
+.subscription__btn:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+}
+ 
+
+.subscription__intro{
+    font-family: 'Poppins', sans-serif;
+}
+
+.subscription__panel__intro__one{
+    font-size:clamp(1.2rem,3.8vw,2rem);
+    color:rgb(25, 223, 25);
+}
+
+.subscription__panel__intro__two{
+    font-size: clamp(.7rem,2.5vw,1rem)
+}
+
+.subscription__panel__intro__three{
+    font-size:clamp(.9rem,2.5vw,1.2rem);
+    color:rgb(82, 82, 82);
+}
+
+.plans__desc h3,
+.plans__desc span{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.plans__desc h3{
+    font-size:clamp(.8rem,2.3vw,1.2rem);
+    color:rgb(45, 0, 209)
+}
+
+.plans__desc span{
+    font-size:clamp(.65rem,1.8vw,.9rem);
+    font-weight: 700;
+    color: rgb(68, 68, 68);
+}
+
+@media only screen and (max-width:970px){
+    .plans{
+        width:200px;
+        height:250px;
+        margin:30px 10px;
+    }
+    .subscription__btn {
+        padding: 10px 38px;
+      }
+}
+
+@media only screen and (max-width:750px) {
+    .subscription__panel__container{
+        margin:10px 20px;
+    }
+    .plans{
+        width:180px;
+        height:220px;
+        margin:30px 10px;
+    }
+    .subscription__btn {
+        padding: 8px 28px;
+      }
+}
+
+@media only screen and (max-width:500px){
+    .subscription__panel__container{
+        margin:0 30px;
+    }
+    .subscription__panel__plans__wrapper{
+        flex-direction: column;
+    }
+    .plans{
+        width:180px;
+        height:200px;
+        margin:10px;
+    }
+
+    .plans__desc span{
+        font-size:.65rem;
+    }
+    
+}

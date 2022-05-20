@@ -1,7 +1,13 @@
-const router =  require("express").Router()
+const express = require('express')
+const router = express.Router()
+const cookieparser = require("cookie-parser")
 const userCtrl = require('../controllers/userCtrls')
 const auth = require('../middleware/auth')
 const authAdmin = require('../middleware/authAdmin')
+
+
+router.use(express.json())
+router.use(cookieparser())
  
 router.post('/user/register', userCtrl.register)
 router.post('/user/activation',userCtrl.emailActivation)

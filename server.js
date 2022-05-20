@@ -2,37 +2,35 @@ require("dotenv").config()
 const path = require('path');
 const express = require("express")
 const mongoose = require("mongoose")
-const cookieparser = require("cookie-parser")
 
 const PORT = process.env.PORT || 5000
 
 const app = express()
-app.use(express.json())
-app.use(cookieparser())
 
 //Routes
 const userRoutes = require("./routes/userRoutes")
 const iplRoutes = require('./routes/iplRoutes')
 const gamingRoutes = require("./routes/gamingRoutes")
+const payments = require('./routes/payments')
+const stripeWebhookRoutes =require('./routes/stripeWebhookRoutes')
 
 //Serving static content
-app.use(express.static(path.join(__dirname ,'client/build')))
+app.use(express.static(path.join(__dirname, 'client/build')))
 
 //Entry point
-app.use('/eb',iplRoutes,userRoutes,gamingRoutes)
-
+app.use('/eb',stripeWebhookRoutes, iplRoutes, userRoutes, gamingRoutes, payments)
 //mongdb connection
 const url = process.env.MONGODB_URL
 
-mongoose.connect(url, (err)=>{
-    if(err) 
+mongoose.connect(url, (err) => {
+  if (err)
     throw err;
 
-    console.log("Connected to the MongoDB!")
+  console.log("Connected to the MongoDB!")
 })
 
 //Running server
-app.listen( PORT , () => {
-    console.log("Server is running on port", PORT)
+app.listen(PORT, () => {
+  console.log("Server is running on port", PORT)
 })
 

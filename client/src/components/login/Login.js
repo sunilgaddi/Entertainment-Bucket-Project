@@ -35,7 +35,7 @@ function Login() {
             setServerMsg({ [Object.keys(res.data)]: Object.values(res.data) })
             dispatch(dispactchLogin())
             localStorage.setItem("userLoggedIn", true)
-            navigate('/eb/home/movies')
+            navigate('/eb/home')
         }
         catch (err) {
             setServerMsg({ [Object.keys(err.response.data)]: Object.values(err.response.data) })
@@ -49,7 +49,7 @@ function Login() {
             setServerMsg({ [Object.keys(res.data)]: Object.values(res.data) })
             dispatch(dispactchLogin())
             localStorage.setItem("userLoggedIn", true)
-            navigate('/eb/home/movies')
+            navigate('/eb/home')
         }
         catch(err){
             setServerMsg({ [Object.keys(err.response.data)]: Object.values(err.response.data) })
@@ -75,7 +75,7 @@ function Login() {
 
                     <div className='btn-wrapper'>
                         <button>Register</button>
-                        <span>Dont have a account?<a href="#">Login</a></span>
+                        <span>Dont have a account?<a href="/eb/user/register">Register</a></span>
                     </div>
 
                     <div><span></span>OR<span></span></div>
