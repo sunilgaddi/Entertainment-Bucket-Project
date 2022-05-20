@@ -29,7 +29,7 @@ function Registration() {
         e.preventDefault()
         setErrors(ClientSideValidation(user))
         try{
-            const res = await axios.post('/user/register',  {firstName, lastName, email, password, cf_password, phoneNumber})
+            const res = await axios.post('/eb/user/register',  {firstName, lastName, email, password, cf_password, phoneNumber})
             setServerMsg({[Object.keys(res.data)]:Object.values(res.data)})
         }
         catch(err){

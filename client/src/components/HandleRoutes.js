@@ -9,6 +9,7 @@ import ResetPassword from "./resetPassword/ResetPassword";
 import AdminPanel from "./adminPanel/AdminPanel";
 import Conformation from "./conformationBox/Conformation";
 import RoleUpdate from "./roleUpdate/RoleUpdate";
+import Success from './CheckoutComponents/Success';
 
 function HandleRoutes() {
     return (
@@ -42,6 +43,9 @@ function HandleRoutes() {
             </Routes>
             <Routes>
                 <Route path='/user/update_role/:id' element={<RoleUpdate />}></Route>
+            </Routes>
+            <Routes>
+                <Route path='/payment-success' element={<Success/>}></Route>
             </Routes>
 
         </>

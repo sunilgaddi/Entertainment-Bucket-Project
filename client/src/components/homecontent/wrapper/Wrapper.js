@@ -8,13 +8,17 @@ import SportsDetails from '../SportsDetails/SportsDetail'
 import GamingPanel from '../gaming/GamingPanel'
 import GameDetails from '../gameDetails/GameDetails'
 import "./Wrapper.css"
+import SubscriptionPanel from "../Payment/SubscriptionPanel"
 
 
 function Wrapper() {
 
+    
+
 
     return (
         <section className='wrapper__section'>
+        <SubscriptionPanel plan={"montly"}/>
             <Routes>
                 <Route path='/movies' element={<MoviesList />} />
             </Routes>
