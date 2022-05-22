@@ -1,5 +1,6 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import axios from 'axios'
+import { useSelector } from "react-redux"
 import ClientSideValidation from "../errors/ClientSideValidation"
 import { dispactchLogin } from '../../redux/actions/authActions'
 import { useDispatch } from 'react-redux'
@@ -13,7 +14,7 @@ const initialState = {
 }
 
 function Login() {
-
+    const auth = useSelector(state => state.authReducers)
     const [user, setUser] = useState(initialState)
     const [serverMsg, setServerMsg] = useState({})
     const [errors, setErrors] = useState({})
@@ -26,6 +27,8 @@ function Login() {
     }
 
     const { email, password, } = user
+    
+
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -41,6 +44,8 @@ function Login() {
             setServerMsg({ [Object.keys(err.response.data)]: Object.values(err.response.data) })
         }
     }
+
+    
 
 
     const responseGoogle = async (response) => {

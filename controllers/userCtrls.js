@@ -184,7 +184,7 @@ const userCtrls = {
         try {
 
             res.clearCookie('refreshToken',
-                { path: '/user/refresh_token' })
+                { path: '/eb/user/refresh_token' })
 
             res.status(200).json({ success: "Successfully Logout." })
         }

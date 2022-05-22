@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 import Home from './homecontent/home/Home'
 import Registration from './create/Registration';
 import ActivateEmail from './activateEmail/ActivateEmail';
@@ -12,42 +13,39 @@ import RoleUpdate from "./roleUpdate/RoleUpdate";
 import Success from './CheckoutComponents/Success';
 
 function HandleRoutes() {
+    const auth = useSelector(state => state.authReducers)
+
+    const { isLoggedIn } = auth
+    
     return (
         <>
-            <Routes>
-                <Route path='/home/*' element={<Home />} />
-            </Routes>
-            <Routes>
-                <Route path='/user/register' element={<Registration />} />
-            </Routes>
-            <Routes>
-                <Route path='/user/activation/:activation_token' element={<ActivateEmail />} />
-            </Routes>
-            <Routes>
-                <Route path='/user/login' element={<Login />} />
-            </Routes>
-            <Routes>
-                <Route path='/user/forgot' element={<ForgotPassword />} />
-            </Routes>
-            <Routes>
-                <Route path='/user/reset/:reset_token' element={<ResetPassword />} />
-            </Routes>
-            <Routes>
-                <Route path='/user/profile' element={<Profile />} />
-            </Routes>
-            <Routes>
-                <Route path='/user/all_info' element={<AdminPanel />}></Route>
-            </Routes>
-            <Routes>
-                <Route path='/user/delete/:id' element={<Conformation />}></Route>
-            </Routes>
-            <Routes>
-                <Route path='/user/update_role/:id' element={<RoleUpdate />}></Route>
-            </Routes>
-            <Routes>
-                <Route path='/payment-success' element={<Success/>}></Route>
-            </Routes>
+            {isLoggedIn === true &&
+                    <Routes>
+                        <Route path='/home/*' element={<Home />} />
 
+                        <Route path='/payment-success' element={<Success />}></Route>
+
+                        <Route path='/user/profile' element={<Profile />} />
+
+                        <Route path='/user/all_info' element={<AdminPanel />}></Route>
+
+                        <Route path='/user/delete/:id' element={<Conformation />}></Route>
+
+                        <Route path='/user/update_role/:id' element={<RoleUpdate />}></Route>
+                    </Routes>
+            }
+            {isLoggedIn === false   &&  <Routes>
+                        <Route path='/user/register' element={<Registration />} />
+
+                        <Route path='/user/activation/:activation_token' element={<ActivateEmail />} />
+
+                        <Route path='/user/login' element={<Login />} />
+
+                        <Route path='/user/forgot' element={<ForgotPassword />} />
+
+                        <Route path='/user/reset/:reset_token' element={<ResetPassword />} />
+                    </Routes>
+            }
         </>
     )
 }

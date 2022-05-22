@@ -1,4 +1,5 @@
 require("dotenv").config()
+const PaymentDetails = require('../model/paymentModel')
 const stripe = require("stripe")("sk_test_51L0M5KSIxvgeJX8O89ivr4YqVGUQuqoRcReVEm1sIRE8D16B0gUvIpsgnTPWlzUFAlyntJhX7ixL9LJKHplzeYNa00i8j8bZlK")
 
 const paymentCtrls = {
@@ -26,6 +27,15 @@ const paymentCtrls = {
             });
 
             res.send({url:session.url});
+    },
+    subscriptionDetails: async (req, res) => {
+        try {
+            const subscriptionDetails = await PaymentDetails.findOne({userId:req.user.id}).select('-password')
+            res.status(200).json({ subscriptionDetails })
+        }
+        catch (err) {
+            res.status(500).json({ msg: err.message })
+        }
     }
 }
 

@@ -1,7 +1,23 @@
 import { NavLink,Link} from 'react-router-dom'
+import { useNavigate } from 'react-router'
+import { useDispatch } from 'react-redux'
+import { dispactchLogout } from '../../redux/actions/authActions'
+
+import axios from 'axios'
 import './Navigation2.css'
 
 function Navigation2() {
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+
+    const handleLogout = async () => {
+        const res = await axios.get('/eb/user/logout')
+        console.log(res.data)
+        localStorage.removeItem('userLoggedIn')
+        navigate('/eb/user/login')
+        dispatch(dispactchLogout)
+    }
+
     return (
         <section className="nav__section2">
             <div className='nav__section2__content'>
@@ -14,7 +30,11 @@ function Navigation2() {
 
                 <ul className='nav__section2__lists__two nav__section2__lists'>
                     <li className='nav__section2__list'><input type='search' /></li>
-                    <li className='nav__section2__list'><Link to='#' className='nav__section2__list__link nav__section2__list__profilelink'>.</Link></li>
+                    <li className='nav__section2__list'><Link to='#' className='nav__section2__list__link nav__section2__list__profilelink'>
+                        <ul>
+                            <li onClick={handleLogout}>Logout</li>
+                        </ul>
+                    </Link></li>
                 </ul>
             </div>
         </section>
