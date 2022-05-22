@@ -3,6 +3,7 @@ import {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import './MovieDetails.css'
 import timer from '../../../asserts/timer.png'
+import ReactPlayer from 'react-player'
 
 
 function MovieDetails() {
@@ -11,6 +12,7 @@ function MovieDetails() {
     const [movieProduction, setMovieProduction] = useState('')
     const [movieCast,setMovieCast] = useState('')
     const [movieCrew,setMovieCrew] = useState('')
+    const [videoId,setVideoId] = useState('')
     const {id} = useParams()
     useEffect( () => {
         const fetchMovie = async () => {
@@ -32,6 +34,19 @@ function MovieDetails() {
             fetchMovieCast()
         }
     },[movieData])
+
+    useEffect(()=>{
+        if(movieData){
+            const fetchMovieVideo = async () => {
+                const movieVideoId = await axios.get(`https://api.themoviedb.org/3/movie/${movieData?.id}/videos?api_key=d8e917f824c891e475632f1dfa0de591&language=en-US`)
+                setVideoId(movieVideoId.data.results[0].key)
+            }
+            fetchMovieVideo()
+        }
+    },[movieData])
+
+
+
     return (
         <div className="moviedetails__container">
             <div className='moviedetails__container__uppersection'>
@@ -54,6 +69,7 @@ function MovieDetails() {
                     </div>
                 </div>
             </div>
+            <div style={{display:"flex", justifyContent:"center"}}>{videoId && <ReactPlayer controls={true} url={`https://www.youtube.com/watch?v=${videoId}`} />}</div>
             <div className='moviedetails__container__middlesection'>
                 <div className='moviedetails__desc__wrapper'>
                     <h3 className='moviedetails__desc__heading'>Over View</h3>

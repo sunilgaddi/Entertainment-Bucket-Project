@@ -1,4 +1,7 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route,Navigate } from 'react-router-dom'
+
+import { useSelector } from 'react-redux'
+
 import MoviesList from '../movielist/MoviesList'
 import MovieDetails from '../movieDetails/MovieDetails'
 import TvSeriesPanel from '../TvSeries/TvSeriesPanel'
@@ -13,36 +16,54 @@ import SubscriptionPanel from "../Payment/SubscriptionPanel"
 
 function Wrapper() {
 
-    
+    const auth = useSelector(state => state.authReducers)
 
+    const { plan } = auth.subscriptionDetails
+
+    let plan_active = true
+
+    //for getting the subscription status
+    if (plan) {
+        plan_active = plan[0].plan_status
+        console.log(plan_active, "from plan")
+    }
+
+        //for navigating user based on subscription status
 
     return (
         <section className='wrapper__section'>
-        <SubscriptionPanel plan={"montly"}/>
-            <Routes>
-                <Route path='/movies' element={<MoviesList />} />
-            </Routes>
-            <Routes>
-                <Route path='/movie/:moviename/:id' element={<MovieDetails />} />
-            </Routes>
-            <Routes>
-                <Route path='/tvseries' element={<TvSeriesPanel />} />
-            </Routes>
-            <Routes>
-                <Route path='/tv/:tvname/:id' element={<TvDetails />} />
-            </Routes>
-            <Routes>
-                <Route path='/sports' element={<SportsPanel/>} />
-            </Routes>
-            <Routes>
-                <Route path='/sports/:id/:match_number/:versus' element={<SportsDetails/>} />
-            </Routes>
-            <Routes>
-                <Route path='/gaming' element={<GamingPanel/>} />
-            </Routes>
-            <Routes>
-                <Route path='/gaming/:game_name/:video_id' element={<GameDetails/>} />
-            </Routes>
+            {plan_active ?
+                <>
+                    <Routes>
+                        <Route path='/movies' element={<MoviesList />} />
+
+
+                        <Route path='/movie/:moviename/:id' element={<MovieDetails />} />
+
+
+                        <Route path='/tvseries' element={<TvSeriesPanel />} />
+
+
+                        <Route path='/tv/:tvname/:id' element={<TvDetails />} />
+
+
+                        <Route path='/sports' element={<SportsPanel />} />
+
+
+                        <Route path='/sports/:id/:match_number/:versus' element={<SportsDetails />} />
+
+
+                        <Route path='/gaming' element={<GamingPanel />} />
+
+
+                        <Route path='/gaming/:game_name/:video_id' element={<GameDetails />} />
+
+                        <Route path='/' element={<Navigate to='/eb/home/movies'/>}/>
+                    </Routes>
+                </>
+                :
+                <SubscriptionPanel />
+            }
         </section>
     )
 }

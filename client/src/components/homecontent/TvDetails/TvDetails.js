@@ -1,6 +1,7 @@
 import axios from 'axios'
 import {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
+import ReactPlayer from 'react-player'
 import './TvDetails.css'
 import timer from '../../../asserts/timer.png'
 import MoviesRow from '../movieRows/MoviesRow'
@@ -14,6 +15,7 @@ function TvDetails() {
     const [tvProduction, setTvProduction] = useState('')
     const [tvCast,setTvCast] = useState('')
     const [tvCrew,setTvCrew] = useState('')
+    const [tvVideoId,setTvVideoId] = useState('')
     const {id} = useParams()
     useEffect( () => {
         const fetchTv = async () => {
@@ -23,11 +25,12 @@ function TvDetails() {
             setTvSeasons(res.data.seasons)
             setTvGenres(res.data.genres)
             setTvProduction(res.data.production_companies)
+            setTvVideoId(res.data.id)
         }
         fetchTv()
     },[])
 
-    console.log(tvSeasons)
+    console.log(tvVideoId)
 
     useEffect( () => {
         if(tvData){
@@ -37,6 +40,17 @@ function TvDetails() {
                 setTvCrew(tvCastnCrew.data.crew)
             }
             fetchTvCast()
+        }
+    },[tvData])
+
+    useEffect( () => {
+        if(tvData){
+            const fetchTvVideoId = async () => {
+                const tvSeriesVideoId = await axios.get(`https://api.themoviedb.org/3/tv/${tvData?.id}/videos?api_key=d8e917f824c891e475632f1dfa0de591&language=en-US`)
+                console.log(tvSeriesVideoId.data)
+                setTvVideoId(tvSeriesVideoId.data.results[0].key)
+            }
+            fetchTvVideoId()
         }
     },[tvData])
 
@@ -63,6 +77,7 @@ function TvDetails() {
                 </div>
             </div>
             <MoviesRow data={tvSeasons} title={'Seasons'} mainPanel={'tv'} subPanel={'season'} tvSeries={tvData.original_name}/>
+            <div style={{display:"flex", justifyContent:"center"}}>{tvVideoId && <ReactPlayer controls={true} url={`https://www.youtube.com/watch?v=${tvVideoId}`} />}</div>
             <div className='moviedetails__container__middlesection'>
                 <div className='moviedetails__desc__wrapper'>
                     <h3 className='moviedetails__desc__heading'>Over View</h3>

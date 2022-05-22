@@ -1,8 +1,10 @@
-import {createStore} from 'redux'
+import {applyMiddleware,createStore} from 'redux'
 import rootReducers from './reducers/index'
 import {Provider} from 'react-redux'
+import thunk from 'redux-thunk'
 
-const store = createStore(rootReducers,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const store = createStore(rootReducers,
+    applyMiddleware(thunk))
 
 function DataProvider({children}){
     return(
