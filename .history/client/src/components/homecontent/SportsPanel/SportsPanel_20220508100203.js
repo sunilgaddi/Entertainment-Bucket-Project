@@ -1,3 +1,0 @@
-function SportsPanel() {
-    ret
-}

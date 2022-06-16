@@ -14,8 +14,8 @@ function Navigation2() {
         const res = await axios.get('/eb/user/logout')
         console.log(res.data)
         localStorage.removeItem('userLoggedIn')
+        dispatch(dispactchLogout())
         navigate('/eb/user/login')
-        dispatch(dispactchLogout)
     }
 
     return (

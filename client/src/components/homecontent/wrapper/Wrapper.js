@@ -18,13 +18,13 @@ function Wrapper() {
 
     const auth = useSelector(state => state.authReducers)
 
-    const { plan } = auth.subscriptionDetails
+    const { subscriptionDetails } = auth
 
-    let plan_active = true
+    let plan_active = false
 
     //for getting the subscription status
-    if (plan) {
-        plan_active = plan[0].plan_status
+    if (subscriptionDetails) {
+        plan_active = subscriptionDetails?.plan === undefined ? false : true
         console.log(plan_active, "from plan")
     }
 

@@ -1,4 +1,5 @@
 import {Routes, Route, Navigate} from "react-router-dom";
+import { useNavigate } from 'react-router'
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import axios from 'axios'
@@ -8,12 +9,14 @@ import HandleRoutes from "./components/HandleRoutes";
 import { dispactchLogin, dispatchUserInfo,dispatchSubscriptionDetails,dispactchLogout } from './redux/actions/authActions'
 
 
-function App() {
+function App(prop) {
+
   const [isLogged,setIsLogged] = useState('')
   const[isLoggedState,setIsLoggedState] = useState('')
   const token = useSelector(state => state.tokenReducer)
   const auth = useSelector(state => state.authReducers)
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
 
   useEffect(() => {
@@ -40,7 +43,9 @@ function App() {
     }
     else{
       dispatch(dispactchLogout())
+ 
     }
+    console.log(isLogged)
   }, [auth.isLoggedIn,isLogged,dispatch])
 
   useEffect(() => {
@@ -74,7 +79,8 @@ function App() {
     }
     
   }, [token, dispatch])
-
+ console.log(isLoggedState)
+ console.log(isLogged)
   return (
     <div className="App">
         <Routes>
