@@ -1,7 +1,7 @@
 pipeline {
     agent {label "ubuntu"}
     
-    tools {nodejs 'node'}
+    tools {jenkins.plugins.nodejs.tools.NodeJSInstallation '16.15.1'}
     
     stages {
         stage('Installing Dependencies') {
