@@ -45,5 +45,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://13.235.68.246:8000"
+  "proxy": "http://ec2-13-235-68-246.ap-south-1.compute.amazonaws.com:8000"
 }
