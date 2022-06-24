@@ -30,7 +30,7 @@ const paymentCtrls = {
     },
     subscriptionDetails: async (req, res) => {
         try {
-            const subscriptionDetails = await PaymentDetails.findOne({userId:req.user.id}).select('-password')
+            const subscriptionDetails = await PaymentDetails.findOne({user_id:req.user.id}).select('-password')
             res.status(200).json({ subscriptionDetails })
         }
         catch (err) {

@@ -79,7 +79,7 @@ function Login() {
 
 
                     <div className='btn-wrapper'>
-                        <button>Register</button>
+                        <button onClick={(e)=> handleSubmit(e)}>Login</button>
                         <span>Dont have a account?<a href="/eb/user/register">Register</a></span>
                     </div>
 
