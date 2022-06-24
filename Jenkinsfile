@@ -9,8 +9,8 @@ pipeline {
                 echo "========== INSTALLING DEPENDENCIES STARTED =========="
                 sh "npm install"
                 dir('client') {
-                    sh 'npm install'
-                    sh 'npm run build'
+                    sh "npm install"
+                    sh "npm run build"
                 }
                 echo "========== INSTALLING DEPENDENCIES FINISHED =========="
             }
