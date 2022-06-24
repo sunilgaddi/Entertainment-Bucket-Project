@@ -69,8 +69,8 @@ function Registration() {
                     {serverMsg.phoneNumber ? <span className='err'>{serverMsg.phoneNumber}</span> : <span className='err'>{errors.phoneNumber}</span>}
                     
                     <div className='btn-wrapper'>
-                        <button>Register</button>
-                        <span>Already have an account?<a href="#">Login</a></span>
+                        <button onClick={(e) => handleSubmit(e)}>Register</button>
+                        <span>Already have an account?<a href="/eb/user/login">Login</a></span>
                     </div>
                 
                 </form>

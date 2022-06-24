@@ -25,7 +25,6 @@ function Wrapper() {
     //for getting the subscription status
     if (subscriptionDetails) {
         plan_active = subscriptionDetails?.plan === undefined ? false : true
-        console.log(plan_active, "from plan")
     }
 
         //for navigating user based on subscription status
