@@ -27,6 +27,7 @@ function SportsDetails() {
         const fetchMatchDetails = async () => {
             try {
                 const response = await axios.get('/eb/ipl-api/schedule')
+                console.log(response,"from axios")
                 setMatchDetails(response.data[id])
             }
             catch (err) {
@@ -35,6 +36,8 @@ function SportsDetails() {
         }
         fetchMatchDetails()
     }, [])
+
+    console.log(matchDetails,"after axios")
 
     useEffect(() => {
         if (matchDetails) {

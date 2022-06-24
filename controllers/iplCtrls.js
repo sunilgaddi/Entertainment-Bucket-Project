@@ -63,7 +63,7 @@ const iplCtrls = {
   schedule: async (req, res) => {
     try {
       if (scheduleCompleted.length === 0) {
-        fetch()
+       await fetch()
       }
       res.status(200).json(scheduleCompleted)
     }

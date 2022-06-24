@@ -52,7 +52,7 @@ const userCtrls = {
 
             const activationToken = createActivationToken(newUser)
 
-            const url = `${CLIENT_URL}/user/activation/${activationToken}`
+            const url = `${CLIENT_URL}/eb/user/activation/${activationToken}`
 
             sendMail(email, url, 'Verify Email Address.')
 
