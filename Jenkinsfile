@@ -1,19 +1,41 @@
 pipeline {
-    agent {label "ubuntu"}
-    
-    tools {nodejs 'node'}
-    
+    agent {label "linux-slave"}
+
+    tools {nodejs "node"}
+
     stages {
         stage('Installing Dependencies') {
             steps {
                 echo "========== INSTALLING DEPENDENCIES STARTED =========="
+
+                echo "========== INSTALLING SERVER DEPENDENCIES  =========="
+
                 sh "npm install"
+
                 dir('client') {
-                    sh "dir"
-                    sh 'npm install'
-                    sh 'npm run build'
+                    
+                    echo "========== INSTALLING CLIENT DEPENDENCIES  =========="
+                    
+                    sh "npm install"
                 }
+
                 echo "========== INSTALLING DEPENDENCIES FINISHED =========="
+            }
+        }
+        stage('Build') {
+           steps{
+                dir('client') {
+                    echo "========== CREATING BUILD =========="
+
+                    sh "npm run build"
+
+                    echo "========== BUILD FINISHED =========="
+                }
+            }
+        }
+        stage('Starting Server'){
+            steps{
+                sh "npm run dev"
             }
         }
     }
