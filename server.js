@@ -17,6 +17,11 @@ const stripeWebhookRoutes =require('./routes/stripeWebhookRoutes')
 //Serving static content
 app.use(express.static(path.join(__dirname, 'client/build')))
 
+app.use('/*',(req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
+
 //Entry point
 app.use('/eb',stripeWebhookRoutes, iplRoutes, userRoutes, gamingRoutes, payments)
 //mongdb connection

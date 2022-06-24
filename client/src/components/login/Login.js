@@ -65,11 +65,11 @@ function Login() {
         <div className='panel_section'>
             <div className='panel_wrapper'>
                 {serverMsg.success && <span className="success">{serverMsg.success}</span>}
-                <h1 className='panel_title' id='login_title'>Login.</h1>
+                <h1 className='panel_title' id='login_title'>Login</h1>
                 <form className='panel_form' id='login_form' onSubmit={handleSubmit}>
 
 
-                    <label htmlFor='email' className='labels'>Email</label>
+                    <label htmlFor='email' className='labels'>Email Address</label>
                     <input type='email' id='email' className='input' name='email' value={user.email} onChange={handleChange} ></input>
                     {serverMsg.email ? <span className='err'>{serverMsg.email}</span> : <span className='err'>{errors.email}</span>}
 
@@ -79,8 +79,11 @@ function Login() {
 
 
                     <div className='btn-wrapper'>
+
                         <button onClick={(e)=> handleSubmit(e)}>Login</button>
+
                         <span>Dont have a account?<a href="/eb/user/register">Register</a></span>
+
                     </div>
 
                     <div><span></span>OR<span></span></div>
