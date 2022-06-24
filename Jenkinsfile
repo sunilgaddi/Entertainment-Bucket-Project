@@ -33,5 +33,10 @@ pipeline {
                 }
             }
         }
+        stage('Starting Server'){
+            steps{
+                sh "npm run dev"
+            }
+        }
     }
 }
