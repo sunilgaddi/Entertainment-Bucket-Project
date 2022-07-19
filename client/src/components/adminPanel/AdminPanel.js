@@ -15,7 +15,7 @@ function AdminPanel() {
         if (isAdmin) {
             const allUserInfo = async () => {
                 try {
-                    const res = await axios.get('/user/all_info', {
+                    const res = await axios.get('/eb/user/all_info', {
                         headers: {
                             Authorization: token
                         }
@@ -47,8 +47,8 @@ function AdminPanel() {
                     </div>
 
                     <div id='admin_btns'>
-                        <Link to={`/user/delete/${item._id}`} id='del_btn'  >Delete User</Link>
-                        <Link to={`/user/update_role/${item._id}`} id='role_btn' >Update Role</Link>
+                        <Link to={`/eb/home/delete_user/${item._id}`} id='del_btn'  >Delete User</Link>
+                        <Link to={`/eb/home/update_role/${item._id}`} id='role_btn' >Update Role</Link>
                     </div>
                 </div>)}
         </section>

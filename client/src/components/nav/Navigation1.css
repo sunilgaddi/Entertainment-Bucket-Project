@@ -162,12 +162,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap:13px;
+        gap:8px;
         padding-left:0;
     }
-
     .nav__list__three a{
-        display: inline-block;
+        display: none;
         width:25px;
         height:25px;
         border-radius: 50%;

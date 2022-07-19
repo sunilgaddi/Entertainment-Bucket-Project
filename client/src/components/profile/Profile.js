@@ -36,7 +36,7 @@ function Profile() {
     const save = async (e) => {
         e.preventDefault()
         try{
-           const res = await axios.patch('/user/update',{
+           const res = await axios.patch('/eb/user/update',{
                 firstName :firstName ? firstName : user.firstName,
                 lastName : lastName ? lastName : user.lastName,
                 phoneNumber: phoneNumber ? phoneNumber : user.phoneNumber
@@ -83,7 +83,7 @@ function Profile() {
                         </div>
                     </form>
                 </div>
-               {isAdmin &&  <div id='fwdarw'><Link to='/user/all_info'>ALL USERS<img src={forwardarrow} alt='forward arrow'/></Link></div>}
+               {isAdmin &&  <div id='fwdarw'><Link to='/eb/home/all_user'>ALL USERS<img src={forwardarrow} alt='forward arrow'/></Link></div>}
             </div>
         </div>
     )

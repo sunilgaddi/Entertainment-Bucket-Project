@@ -11,14 +11,14 @@ function RoleUpdate() {
     const navigate = useNavigate()
 
     const saveRole = () => {
-            axios.patch(`/user/update_role/${id}`, {role:value},{
+            axios.patch(`/eb/user/update_role/${id}`, {role:value},{
                 headers:{Authorization:token}
             })
-            navigate('/user/all_info')
+            navigate('/eb/home/all_user')
     }
 
     const cancel = () =>{
-        navigate('/user/all_info')
+        navigate('/eb/home/all_user')
     }
 
     return (

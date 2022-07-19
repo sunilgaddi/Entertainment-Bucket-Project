@@ -9,16 +9,16 @@ function Conformation() {
     const navigate = useNavigate()
 
     const deleteUser = async () =>{
-           await axios.delete(`/user/delete/${id}`,{
+           await axios.delete(`/eb/user/delete/${id}`,{
                 headers:{
                     Authorization:token
                 }
             })
-            navigate('/user/all_info')
+            navigate('/eb/home/all_user')
     }
 
     const cancel = () => {
-        navigate('/user/all_info')
+        navigate('/eb/home/all_user')
     }
 
     return (
