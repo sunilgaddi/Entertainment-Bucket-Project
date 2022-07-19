@@ -1,7 +1,8 @@
 import { Routes, Route,Navigate } from 'react-router-dom'
 
 import { useSelector } from 'react-redux'
-
+import Profile from '../../profile/Profile'
+import AdminPanel from '../../adminPanel/AdminPanel'
 import MoviesList from '../movielist/MoviesList'
 import MovieDetails from '../movieDetails/MovieDetails'
 import TvSeriesPanel from '../TvSeries/TvSeriesPanel'
@@ -12,6 +13,8 @@ import GamingPanel from '../gaming/GamingPanel'
 import GameDetails from '../gameDetails/GameDetails'
 import "./Wrapper.css"
 import SubscriptionPanel from "../Payment/SubscriptionPanel"
+import UpdateRole from '../../roleUpdate/RoleUpdate'
+import ConformationBox from '../../conformationBox/Conformation'
 
 
 function Wrapper() {
@@ -58,6 +61,11 @@ function Wrapper() {
                         <Route path='/gaming/:game_name/:video_id' element={<GameDetails />} />
 
                         <Route path='/' element={<Navigate to='/eb/home/movies'/>}/>
+
+                        <Route path='/profile' element={ <Profile/>} />
+                        <Route path='/all_user' element={ <AdminPanel/>} />
+                        <Route path='/delete_user/:id' element={<ConformationBox/>} />
+                        <Route path='/update_role/:id' element={<UpdateRole/>} />
                     </Routes>
                 </>
                 :

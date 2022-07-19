@@ -54,7 +54,7 @@ function Login() {
             setServerMsg({ [Object.keys(res.data)]: Object.values(res.data) })
             dispatch(dispactchLogin())
             localStorage.setItem("userLoggedIn", true)
-            navigate('/eb/home')
+            navigate('/eb/home/movies')
         }
         catch(err){
             setServerMsg({ [Object.keys(err.response.data)]: Object.values(err.response.data) })
